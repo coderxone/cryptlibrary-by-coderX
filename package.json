@@ -1,0 +1,22 @@
+{
+  "name": "gencrypt",
+  "version": "1.0.5",
+  "description": "private public key encryption and decryption library for cryptography and data encryption and decryption, can be used in everywhere everything packed",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./testFolder/script.js"
+  },
+  "keywords": [
+    "gencrypt new high crypto library",
+    "private",
+    "public",
+    "key",
+    "encryption",
+    "library"
+  ],
+  "author": "whoamicryptx FCE <https://www.npmjs.com/~whoamicryptx> (2clickorg@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}
