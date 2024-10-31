@@ -1,6 +1,6 @@
 {
   "name": "gencrypt",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "private public key encryption and decryption library for cryptography and data encryption and decryption, can be used in everywhere everything packed",
   "main": "index.js",
   "scripts": {

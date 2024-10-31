@@ -2,9 +2,14 @@
 
 Introducing our JavaScript Cryptography Library – a high-performance, all-in-one solution for secure data encryption and decryption. Featuring robust private-public key encryption, it ensures top-tier security for all your cryptographic needs. This versatile library is ideal for high-quality data protection in AI projects and financial organizations, safeguarding sensitive information while allowing seamless integration across multiple platforms. Everything you need for advanced encryption is packed into one powerful package, providing maximum security and ease of use. Perfect for developers seeking to implement cutting-edge cryptographic solutions, our library is your go-to tool for protecting data integrity and confidentiality in today's digital landscape.
 
-### Update added
+### GITHUB REPO
 
-easy update
+<!-- README for NPM; the one for GitHub is in .github directory. -->
+
+<badges>
+
+
+Please refer to the [GitHub README](https://github.com/coderxone/cryptlibrary-by-coderX) for full documentation.
 
 
 ### Usage
