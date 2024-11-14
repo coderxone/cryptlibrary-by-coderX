@@ -21,9 +21,19 @@ const cryptKey = "new key"; //change this line
 const cryptKey = "your key"; //to this
 
 
+(ESM ES6)
 
+import {encrypt, decrypt} from 'gencrypt';
+
+let obj = encrypt({
+    name:name
+});
+
+let decryptobj = decrypt('incoming string');
 
 To encrypt js object
+(CommonJS)
+ //if you see error with require(commonJS) please go to package folder find package.json and delete  "type": "module", it will enable support
 const gencrypt = require('gencrypt');
 
  console.log(gencrypt.encrypt({
@@ -58,6 +68,7 @@ npm install gencrypt
 ES6 import for typical API call signing use case:
 
 ```javascript
+(ESM ES6) Usage
 import {encrypt, decrypt} from 'gencrypt';
 
 let obj = encrypt({
@@ -67,7 +78,9 @@ let obj = encrypt({
 let decryptobj = decrypt('incoming string');
 
 or
- 
+ if you see error with require(commonJS) please go to package folder find package.json and delete  "type": "module", it will enable support
+
+(CommonJS) Usage
 const gencrypt = require('gencrypt');
 gencrypt.crypt({
     name:name
