@@ -22,12 +22,16 @@ import CryptoJS from "crypto-js";
      //aes 256 decryption
      export const decrypt = (data) => {
 
-        let decrypt = encodeKeyLevel(cryptKeyLibrary.getCryptKey(),cryptKeyLibrary.getCryptKey());
+        try{
+          let decrypt = encodeKeyLevel(cryptKeyLibrary.getCryptKey(),cryptKeyLibrary.getCryptKey());
 
-        var bytes = CryptoJS.AES.decrypt(data, decrypt);
-        var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+          var bytes = CryptoJS.AES.decrypt(data, decrypt);
+          var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
-         return decryptedData;
+          return decryptedData;
+        }catch(exeption){
+          return;
+        }
 
       }
 

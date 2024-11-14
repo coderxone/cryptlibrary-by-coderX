@@ -25,12 +25,17 @@ const ext = {
      //aes 256 decryption
      decrypt:function(data){
 
-        let decrypt = ext.encodeKeyLevel(cryptKeyLibrary.getCryptKey(),cryptKeyLibrary.getCryptKey());
+        try{
+            let decrypt = ext.encodeKeyLevel(cryptKeyLibrary.getCryptKey(),cryptKeyLibrary.getCryptKey());
 
-        var bytes = CryptoJS.AES.decrypt(data, decrypt);
-        var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+            var bytes = CryptoJS.AES.decrypt(data, decrypt);
+            var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
-         return decryptedData;
+            return decryptedData;
+        }catch(exeption){
+            return;
+        }
+        
 
       },
 
