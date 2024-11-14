@@ -1,10 +1,13 @@
 const cryptKey = "new key";
 
-module.exports = {
+const ext = {
 
       getCryptKey:function(){
         return cryptKey;
       },
 
 };
+
+module.exports = ext;
+
 

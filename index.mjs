@@ -1,10 +1,7 @@
-// import cryptKey from '../config/config';
-var cryptKeyLibrary = require("./config/config.js");
-var CryptoJS = require("crypto-js");
+import cryptKeyLibrary from "./config/config.cjs";
+import CryptoJS from "crypto-js";
 
-const ext = {
-
-    encodeKeyLevel:(text, key) => {
+    const encodeKeyLevel = (text, key) => {
         let result = "";
         for (let i = 0; i < text.length; i++) {
             let charCode = text.charCodeAt(i);
@@ -12,30 +9,34 @@ const ext = {
             result += String.fromCharCode(charCode + keyCharCode);
         }
         return result;
-    },
+    }
 
       //aes 256 encryption
-     encrypt:function(data){
+      export const encrypt = (data) => {
 
-        let crypt = ext.encodeKeyLevel(cryptKeyLibrary.getCryptKey(),cryptKeyLibrary.getCryptKey());
+        let crypt = encodeKeyLevel(cryptKeyLibrary.getCryptKey(),cryptKeyLibrary.getCryptKey());
         
         var ciphertext = CryptoJS.AES.encrypt(JSON.stringify(data), crypt).toString();
         return ciphertext;
-     },
+     }
      //aes 256 decryption
-     decrypt:function(data){
+     export const decrypt = (data) => {
 
-        let decrypt = ext.encodeKeyLevel(cryptKeyLibrary.getCryptKey(),cryptKeyLibrary.getCryptKey());
+        let decrypt = encodeKeyLevel(cryptKeyLibrary.getCryptKey(),cryptKeyLibrary.getCryptKey());
 
         var bytes = CryptoJS.AES.decrypt(data, decrypt);
         var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
 
          return decryptedData;
 
-      },
+      }
 
-}
+      if (typeof module === 'object' && module.exports) {
+        // CommonJS
+        module.exports = { encrypt,decrypt };
+      }
 
-module.exports = ext;
+
+
 
 
