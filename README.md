@@ -1,89 +1,87 @@
 # gencrypt
 
-Introducing our JavaScript Cryptography Library – a high-performance, all-in-one solution for secure data encryption and decryption. Featuring robust private-public key encryption, it ensures top-tier security for all your cryptographic needs. This versatile library is ideal for high-quality data protection in AI projects and financial organizations, safeguarding sensitive information while allowing seamless integration across multiple platforms. Everything you need for advanced encryption is packed into one powerful package, providing maximum security and ease of use. Perfect for developers seeking to implement cutting-edge cryptographic solutions, our library is your go-to tool for protecting data integrity and confidentiality in today's digital landscape.
+**gencrypt** is a high-performance JavaScript Cryptography Library designed for secure data encryption and decryption. Featuring robust public-private key encryption, this library offers top-tier security for various cryptographic needs, making it an excellent choice for developers in AI, financial services, or any project requiring advanced data protection. 
 
-### GITHUB REPO
+With **gencrypt**, you have everything you need to ensure data integrity and confidentiality, all within an easy-to-integrate package that works seamlessly across multiple platforms.
 
-<!-- README for NPM; the one for GitHub is in .github directory. -->
+### Key Features
+- High-performance encryption and decryption
+- Public-private key cryptography for maximum security
+- Suitable for AI and financial applications
+- Supports both ES6 and CommonJS
 
-<badges>
+For comprehensive documentation, please refer to the [GitHub Repository](https://github.com/coderxone/cryptlibrary-by-coderX).
 
+## Installation
 
-Please refer to the [GitHub README](https://github.com/coderxone/cryptlibrary-by-coderX) for full documentation.
-
-
-### Usage
-
-first set your key inside gencrypt module -> config/config.js folder
-
-you will find this line or you can search in your IDE by name "cryptKey" to find file
-const cryptKey = "new key"; //change this line
-const cryptKey = "your key"; //to this
-
-
-(ESM ES6)
-
-import {encrypt, decrypt} from 'gencrypt';
-
-let obj = encrypt({
-    name:name
-});
-
-let decryptobj = decrypt('incoming string');
-
-To encrypt js object
-(CommonJS)
- //if you see error with require(commonJS) please go to package folder find package.json and delete  "type": "module", it will enable support
-const gencrypt = require('gencrypt');
-
- console.log(gencrypt.encrypt({
-     'keycode':'FCE',
-    'firstname':'abc',
-     'lastname':'234'
- }))
-
- to decrypt encrypted message use
-
-let encryptedString = 'U2FsdGVkX1/j16TTXF86LIDKP/ipy3yU8MDYggf+17FLPTKY+SB/EsnEeldtm1TvrhnYMRb0vNS4ZSzSNYwoRLIHOVuuWtMCPSdBBRMp2rE=';
-
- console.log(gencrypt.decrypt(encryptedString));
-
-//{ keycode: 'FCE', firstname: 'abc', lastname: '234' }
-
-
-
-## Node.js (Install)
-
-Requirements:
-
-- Node.js
-- npm (Node.js package manager)
+To get started, install **gencrypt** using npm:
 
 ```bash
 npm install gencrypt
-```
 
+Configuration
+To configure your encryption key:
 
+1. Open config/config.js in the gencrypt module. 
+2. Locate the line: const cryptKey = "new key";
+3. Change "new key" to your desired key.
 
-ES6 import for typical API call signing use case:
+# Example:
+const cryptKey = "your key"; // Set your encryption key here
 
-```javascript
-(ESM ES6) Usage
-import {encrypt, decrypt} from 'gencrypt';
+#Usage
+ES6 / ESM
+Import and use encrypt and decrypt functions with ES6 syntax:
 
-let obj = encrypt({
-    name:name
+import { encrypt, decrypt } from 'gencrypt';
+
+// Encrypt a JavaScript object
+let encryptedObject = encrypt({
+    name: 'John Doe'
 });
 
-let decryptobj = decrypt('incoming string');
+// Decrypt an encrypted string
+let decryptedObject = decrypt('your_encrypted_string');
 
-or
- if you see error with require(commonJS) please go to package folder find package.json and delete  "type": "module", it will enable support
+#CommonJS
+#For CommonJS environments:
 
-(CommonJS) Usage
+If you encounter an error with require, remove "type": "module" from package.json in the package folder.
+
+Then, require the module as shown below:
+
 const gencrypt = require('gencrypt');
-gencrypt.crypt({
-    name:name
-})
 
-gencrypt.decrypt("incoming encrypted string")
+// Encrypt an object
+console.log(gencrypt.encrypt({
+    keycode: 'FCE',
+    firstname: 'abc',
+    lastname: '234'
+}));
+
+// Decrypt an encrypted message
+let encryptedString = 'U2FsdGVkX1/j16TTXF86LIDKP/ipy3yU8MDYggf+17FLPTKY+SB/EsnEeldtm1TvrhnYMRb0vNS4ZSzSNYwoRLIHOVuuWtMCPSdBBRMp2rE=';
+console.log(gencrypt.decrypt(encryptedString));
+// Expected output: { keycode: 'FCE', firstname: 'abc', lastname: '234' }
+
+#Node.js Requirements
+* Node.js
+* npm (Node Package Manager)
+#Additional Usage Example for API Call Signing (ES6)
+
+import { encrypt, decrypt } from 'gencrypt';
+
+let encryptedData = encrypt({
+    name: 'John Doe'
+});
+
+let decryptedData = decrypt('your_encrypted_string');
+
+#For CommonJS environments:
+const gencrypt = require('gencrypt');
+
+gencrypt.encrypt({
+    name: 'John Doe'
+});
+
+gencrypt.decrypt("your_encrypted_string");
